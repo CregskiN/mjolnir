@@ -1,7 +1,10 @@
 import React, { useState, useContext, FunctionComponentElement } from 'react';
 import classNames from 'classnames';
+
 import { MenuContext } from './menu';
 import { MenuItemProps } from './menuItem';
+import Icon from '../Icon/icon';
+import Transition from '../Transition/transition';
 
 export interface SubMenuProps {
   // index?: number;
@@ -15,10 +18,7 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
 
   const context = useContext(MenuContext);
   const opendSubMenus = context.defaultOpenSubMenus as Array<string>;
-  const isOpened =
-    index && context.mode === 'vertical'
-      ? opendSubMenus.includes(index)
-      : false;
+  const isOpened = (index && context.mode === 'vertical') ? opendSubMenus.includes(index) : false;
   const [menuOpen, setOpen] = useState(isOpened);
   const classes = classNames('menu-item submenu-item', className, {
     'is-active': context.index === index,
@@ -42,20 +42,20 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
   const clickEvents =
     context.mode === 'vertical'
       ? {
-          onClick: handleClick,
-        }
+        onClick: handleClick,
+      }
       : {};
 
   const mouseEvents =
     context.mode !== 'vertical'
       ? {
-          onMouseEnter: (e: React.MouseEvent) => {
-            handleMouse(e, true);
-          },
-          onMouseLeave: (e: React.MouseEvent) => {
-            handleMouse(e, false);
-          },
-        }
+        onMouseEnter: (e: React.MouseEvent) => {
+          handleMouse(e, true);
+        },
+        onMouseLeave: (e: React.MouseEvent) => {
+          handleMouse(e, false);
+        },
+      }
       : {};
 
   const renderChildren = () => {
@@ -67,19 +67,28 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
       const { displayName } = childElement.type;
       if (displayName === 'MenuItem') {
         return React.cloneElement(childElement, {
-          index: `${index}-${i}`
+          index: `${index}-${i}`,
         });
       } else {
         console.error('Warning: SubMenu has a child whitch is not MenuItem');
       }
     });
-    return <ul className={subMenuClasses}>{childrenComponent}</ul>;
+    return (
+      <Transition
+        in={menuOpen}
+        timeout={300}
+        classNames="zoom-in-top"
+      >
+        <ul className={subMenuClasses}>{childrenComponent}</ul>
+      </Transition>
+    );
   };
 
   return (
     <li className={classes} key={index} {...mouseEvents}>
       <div className="submenu-title" {...clickEvents}>
         {title}
+        <Icon icon="arrow-down" className="arrow-icon" />
       </div>
       {renderChildren()}
     </li>

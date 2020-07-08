@@ -1,85 +1,35 @@
-import React from 'react';
-import './App.css';
-import Button, { ButtonType, ButtonSize } from './components/Button/button';
-import Menu from './components/Menu/menu';
-import MenuItem from './components/Menu/menuItem';
-import SubMenu from './components/Menu/subMenu';
+import React, { useState } from "react";
+import axios from 'axios';
+
+import "./App.css";
+import { useEffect } from "@storybook/addons";
+
+// import Button from "./components/Button/button";
+// import Menu from "./components/Menu/menu";
+// import MenuItem from "./components/Menu/menuItem";
+// import SubMenu from "./components/Menu/subMenu";
+// import Icon from "./components/Icon/icon";
+// import Transition from './components/Transition/transition';
+
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { faCoffee, faCheckSquare } from "@fortawesome/free-solid-svg-icons"
+// import { fas } from "@fortawesome/free-solid-svg-icons"
+// import { library } from "@fortawesome/fontawesome-svg-core"
+// library.add(fas);
 
 function App() {
-  return (
-    <div className="App">
-      <Button>Button</Button>
-      <Button className="hello" disabled>
-        Disabled Button
-      </Button>
-      <Button
-        onClick={(e) => {
-          console.log(e);
-        }}
-        btnType={ButtonType.Primary}
-        size={ButtonSize.Large}
-      >
-        Primary Large
-      </Button>
-      <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>
-        Danger Large
-      </Button>
-      <Button btnType={ButtonType.Default}>Default Default</Button>
-      <Button
-        btnType={ButtonType.Link}
-        href="http://www.baidu.com"
-        target="_blank"
-      >
-        Default Link
-      </Button>
-      <Button
-        btnType={ButtonType.Link}
-        href="http://www.baidu.com"
-        size={ButtonSize.Small}
-      >
-        Small Link
-      </Button>
-      <Button btnType={ButtonType.Link} href="http://www.baidu.com" disabled>
-        Disabled Link
-      </Button>
 
-      <div>
-        <Menu
-          onSelect={(index) => {
-            console.log(index);
-          }}
-        >
-          <MenuItem>cool link 1</MenuItem>
-          <MenuItem disabled>cool link 2</MenuItem>
-          <SubMenu title="dropDown">
-            <MenuItem>dropDown 1</MenuItem>
-            <MenuItem>dropDown 2</MenuItem>
-            <MenuItem>dropDown 3</MenuItem>
-          </SubMenu>
-          <MenuItem>cool link 3</MenuItem>
-        </Menu>
-      </div>
+	
 
-      <div>
-        <Menu
-          onSelect={(index) => {
-            console.log(index);
-          }}
-          mode="vertical"
-          defaultOpenSubMenus={['2']}
-        >
-          <MenuItem>cool link 1</MenuItem>
-          <MenuItem disabled>cool link 2</MenuItem>
-          <SubMenu title="dropDown">
-            <MenuItem>dropDown 1</MenuItem>
-            <MenuItem>dropDown 2</MenuItem>
-            <MenuItem>dropDown 3</MenuItem>
-          </SubMenu>
-          <MenuItem>cool link 3</MenuItem>
-        </Menu>
-      </div>
-    </div>
-  );
+	useEffect(() => {
+
+	},[])
+
+	return (
+		<div className="App">
+			
+		</div>
+	);
 }
 
 export default App;

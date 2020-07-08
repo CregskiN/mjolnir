@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, FC } from 'react';
 import classNames from 'classnames';
 import { MenuItemProps } from './menuItem';
 
@@ -11,12 +11,16 @@ type SelectCallBack = (selectIndex: string) => void
  * 父组件的props
  */
 export interface MenuProps {
-    // defaultIndex?: number;
+    /** 默认的选中item的下标 从0开始 */
     defaultIndex?: string;
     className?: string;
+    /** 模式，可选垂直和水平 */
     mode?: MenuMode;
+    /** 自定义属性 */
     style?: React.CSSProperties;
+    /** 选择事件 */
     onSelect?: SelectCallBack;
+    /** 默认打开的SubMenu下标 */
     defaultOpenSubMenus?: string[];
 }
 
@@ -35,7 +39,13 @@ export const MenuContext = createContext<IMenuContext>({
     index: '0'
 })
 
-const Menu: React.FC<MenuProps> = (props) => {
+/**
+ * 以hover触发的多级菜单展示
+ * ```js
+ * import { Menu, SubMenu, MenuItem } from 'mjolnir';
+ * ```
+ */
+export const Menu: FC<MenuProps> = (props) => {
     const {
         className,
         mode,

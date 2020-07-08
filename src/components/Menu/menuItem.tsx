@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { MenuContext } from './menu';
 
 export interface MenuItemProps {
-    // index?: number;
     index?: string;
     disabled?: boolean;
     className?: string;
@@ -11,7 +10,7 @@ export interface MenuItemProps {
 
 }
 
-const MenuItem: React.FC<MenuItemProps> = (props) => {
+export const MenuItem: React.FC<MenuItemProps> = (props) => {
     const {
         index,
         disabled,
