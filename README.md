@@ -56,3 +56,10 @@ https://storybook.js.org/addons/
 2. 默认不带cookie，需要配置头部
 3. 不支持abort，不支持超时控制
 4. 没有onProcess，不支持进度监控
+
+2. 上传文件
++ ajax 异步上传
++ form
+  + multipart/form-data 上传二进制文件最好的格式
+  + application/x-www-form-urlencoded 表单默认，大量二进制很低效
+  + text/plain

@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
 import "./App.css";
-import { useEffect } from "@storybook/addons";
 
 // import Button from "./components/Button/button";
 // import Menu from "./components/Menu/menu";
@@ -18,16 +17,43 @@ import { useEffect } from "@storybook/addons";
 // library.add(fas);
 
 function App() {
-
-	
-
+	const [title, setTitle] = useState('');
+	const postData = {
+		title: 'my titile',
+		body: 'hello man'
+	}
 	useEffect(() => {
+		axios.post('http://jsonplaceholder.typicode.com/posts', postData).then(res => {
+			console.log(res);
+			setTitle(res.data.toString());
+		})
+	}, [postData])
 
-	},[])
+	const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const files = e.target.files;
+		if (files) {
+			const uploadFile = files[0]; // File
+			const formData = new FormData();
+			formData.append(uploadFile.name, uploadFile);
+			axios.post('http://jsonplaceholder.typicode.com/posts', formData, {
+				headers: {
+					'Content-Type': 'multipart/form-data'
+				}
+			}).then(res => {
+				console.log(res);
+				
+			})
+		}
+	}
 
 	return (
 		<div className="App">
-			
+			<h1>{title}</h1>
+			{/* <form method="post" encType="multipart/form-data" action="http://jsonplaceholder.typicode.com/posts">
+				<input type="file" name="myFile" />
+				<button type="submit">Submit</button>
+			</form> */}
+			<input type="file" onChange={handleFileChange} />
 		</div>
 	);
 }

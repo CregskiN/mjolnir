@@ -1,4 +1,4 @@
-import React, {FC, ButtonHTMLAttributes, AnchorHTMLAttributes} from 'react';
+import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 import classNames from 'classnames';
 
 /**
