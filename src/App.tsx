@@ -34,7 +34,7 @@ function App() {
 		if (files) {
 			const uploadFile = files[0]; // File
 			const formData = new FormData();
-			formData.append(uploadFile.name, uploadFile);
+			formData.apspend(uploadFile.name, uploadFile);
 			axios.post('http://jsonplaceholder.typicode.com/posts', formData, {
 				headers: {
 					'Content-Type': 'multipart/form-data'
