@@ -2,7 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 module.exports = {
-  stories: ['../src/**/*.stories.tsx'],
+  stories: ['../src/welcome.stories.tsx','../src/**/*.stories.tsx'],
   webpackFinal: async config => {
     config.module.rules.push({
       test: /\.scss$/,
