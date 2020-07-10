@@ -4,16 +4,16 @@ node_js:
 cache:
   directories:
   - node_modules
-env:
-  - CI=true
+env: # 环境变量
+  - CI=true # 打开create-react-app CI选项
   script:
     - npm run build-storybook
-deploy:
+deploy: # 部署 这里只用了部署到github pages服务器
   provider: pages
   skip_cleanup: true
   github_token: $github_token
   local_dir: storybook-static
   on:
-    branch: dev # 那个biranch有push触发
+    branch: dev # 监测名为dev的branch，有变化，则执行预设的工作流
   
   
