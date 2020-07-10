@@ -48,7 +48,7 @@ export const Input: FC<InputProps> = (props) => {
     })
 
     function fixControlledValue(value: any) {
-        if (typeof value == null) {
+        if (value == null) {
             return '';
         } else {
             return value;

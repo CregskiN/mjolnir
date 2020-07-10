@@ -1,8 +1,8 @@
 import React from 'react';
 import { config } from 'react-transition-group';
-import { render, RenderResult, fireEvent, wait, cleanup } from '@testing-library/react';
+import { render, RenderResult, fireEvent, wait } from '@testing-library/react';
 
-import { AutoComplete, AutoCompleteProps, DataSourceType, DataSourceObject } from './autoComplete';
+import { AutoComplete, AutoCompleteProps, DataSourceType } from './autoComplete';
 
 import { fas } from "@fortawesome/free-solid-svg-icons"
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -121,19 +121,19 @@ interface GithubUserProps {
     [propName: string]: any;
 }
 
-const handleFetch = (query: string) => {
-    return fetch(`https://api.github.com/search/users?q=${query}`)
-        .then(res => res.json())
-        .then(({ items }) => {
-            return (items as GithubUserProps[]).slice(0, 10).map((item) => ({ value: item.login, ...item }))
-        })
-}
+// const handleFetch = (query: string) => {
+//     return fetch(`https://api.github.com/search/users?q=${query}`)
+//         .then(res => res.json())
+//         .then(({ items }) => {
+//             return (items as GithubUserProps[]).slice(0, 10).map((item) => ({ value: item.login, ...item }))
+//         })
+// }
 
-const testAsyncProps: AutoCompleteProps = {
-    fetchSuggestions: handleFetch,
-    placeholder: 'async-autoComplete',
-    onSelect: jest.fn(),
-}
+// const testAsyncProps: AutoCompleteProps = {
+//     fetchSuggestions: handleFetch,
+//     placeholder: 'async-autoComplete',
+//     onSelect: jest.fn(),
+// }
 
 describe('test async AutoComplete Component', () => {
     it('renderOption should generate the right template', async () => {

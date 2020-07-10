@@ -5,7 +5,7 @@ import { CSSTransitionProps } from 'react-transition-group/CSSTransition';
 type AnimationName = 'zoom-in-top' | 'zoom-in-left' | 'zoom-in-bottom' | 'zoom-in-right';
 
 
-type TransitionProps = CSSTransitionProps & {
+export type TransitionProps = CSSTransitionProps & {
     animation?: AnimationName;
     wrapper?: boolean; // 为避免被包裹的按钮存在transition属性，造成覆盖，使用wrapper包裹内层组件
 };

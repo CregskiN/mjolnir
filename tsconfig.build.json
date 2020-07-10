@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "build", // 输出dir
+    "module": "esnext", // 编译后的模块类型
+    "target": "es5", // 编译后的js版本
+    "declaration": true, // 为每个js文件生成.d.ts
+    "jsx": "react", // 自动用 createReactElement 编译jsx
+    "moduleResolution": "node", // 模块处理方式，tsc对绝对路径、相对路径处理不一样
+    "allowSyntheticDefaultImports": true // 支持default引入模块
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.test.tsx", "src/**/*.stories.tsx"]
+}
