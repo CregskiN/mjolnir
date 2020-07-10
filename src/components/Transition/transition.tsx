@@ -6,8 +6,10 @@ type AnimationName = 'zoom-in-top' | 'zoom-in-left' | 'zoom-in-bottom' | 'zoom-i
 
 
 export type TransitionProps = CSSTransitionProps & {
+    /* 可选值 'zoom-in-top' | 'zoom-in-left' | 'zoom-in-bottom' | 'zoom-in-right' */
     animation?: AnimationName;
-    wrapper?: boolean; // 为避免被包裹的按钮存在transition属性，造成覆盖，使用wrapper包裹内层组件
+    /* 是否使用包裹。为避免被包裹的按钮存在transition属性，造成覆盖，使用wrapper包裹内层组件 */
+    wrapper?: boolean;
 };
 
 const Transition: React.FC<TransitionProps> = (props) => {

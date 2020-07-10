@@ -11,8 +11,9 @@ type SelectCallBack = (selectIndex: string) => void
  * 父组件的props
  */
 export interface MenuProps {
-    /** 默认的选中item的下标 从0开始 */
+    /** 默认的选中item的下标从0开始 */
     defaultIndex?: string;
+    /* 最外层div的css */
     className?: string;
     /** 模式，可选垂直和水平 */
     mode?: MenuMode;

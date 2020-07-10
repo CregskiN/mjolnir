@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/CregskiN/mjolnir/static/css/main.6e0f8440.chunk.css",
+    "main.js": "/CregskiN/mjolnir/main.bc363e06f8fffee59bfb.bundle.js",
+    "main.css.map": "/CregskiN/mjolnir/static/css/main.6e0f8440.chunk.css.map",
+    "main.js.map": "/CregskiN/mjolnir/main.bc363e06f8fffee59bfb.bundle.js.map",
+    "runtime~main.js": "/CregskiN/mjolnir/runtime~main.bc363e06f8fffee59bfb.bundle.js",
+    "runtime~main.js.map": "/CregskiN/mjolnir/runtime~main.bc363e06f8fffee59bfb.bundle.js.map",
+    "vendors~main.css": "/CregskiN/mjolnir/static/css/vendors~main.f8f248a5.chunk.css",
+    "vendors~main.js": "/CregskiN/mjolnir/vendors~main.bc363e06f8fffee59bfb.bundle.js",
+    "vendors~main.css.map": "/CregskiN/mjolnir/static/css/vendors~main.f8f248a5.chunk.css.map",
+    "vendors~main.js.map": "/CregskiN/mjolnir/vendors~main.bc363e06f8fffee59bfb.bundle.js.map",
+    "iframe.html": "/CregskiN/mjolnir/iframe.html",
+    "precache-manifest.68c10035baaf1e8909b5bfddfcf30475.js": "/CregskiN/mjolnir/precache-manifest.68c10035baaf1e8909b5bfddfcf30475.js",
+    "service-worker.js": "/CregskiN/mjolnir/service-worker.js",
+    "vendors~main.bc363e06f8fffee59bfb.bundle.js.LICENSE.txt": "/CregskiN/mjolnir/vendors~main.bc363e06f8fffee59bfb.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.bc363e06f8fffee59bfb.bundle.js",
+    "static/css/vendors~main.f8f248a5.chunk.css",
+    "vendors~main.bc363e06f8fffee59bfb.bundle.js",
+    "static/css/main.6e0f8440.chunk.css",
+    "main.bc363e06f8fffee59bfb.bundle.js"
+  ]
+}

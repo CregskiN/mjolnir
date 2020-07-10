@@ -8,27 +8,46 @@ import Dragger from './dragger';
 export type UploadFileStatus = 'ready' | 'uploading' | 'success' | 'error';
 
 export interface UploadFile {
+    /* 上传文件唯一识别标识 */
     uid: string;
+    /* 大小 */
     size: number;
+    /* 文件名 */
     name: string;
+    /* 状态 */
     status?: UploadFileStatus;
+    /* 上传进度 */
     percent?: number;
-    raw?: File; // 原始文件
+    /* 原始文件 */
+    raw?: File;
+    /* 响应处理 */
     response?: any;
+    /* 错误处理 */
     error?: any;
 }
 
 export interface UploadProps {
+    /* 类似 form 的 action URL */
     action: string;
+    /* （可选）已经处理完的文件列表 */
     defaultFileList?: UploadFile[];
+    /* 生命周期事件一 */
     beforeUpload?: (file: File) => boolean | Promise<File>;
+    /* 进度事件 */
     onProgress?: (percentage: number, file: File) => void;
+    /* 成功事件 */
     onSuccess?: (data: any, file: File) => void;
+    /* 失败事件 */
     onError?: (err: any, file: File) => void;
+    /* 改变事件，发生在onSuccess、onError、以及完成文件选择之后*/
     onChange?: (file: File) => void;
+    /* 移除事件 */
     onRemove?: (file: UploadFile) => void;
+    /* HTTP header */
     headers?: { [key: string]: any };
+    /* multipart/form 中的 name  */
     name?: string;
+    /* HTTP body 中的 name 和 value */
     data?: { [key: string]: any };
     /* 是否携带cookie */
     withCredentials?: boolean;
